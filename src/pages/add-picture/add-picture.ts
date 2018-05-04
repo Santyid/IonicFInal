@@ -17,7 +17,7 @@ import { ActionProvider } from '../../providers/action/action';
 	templateUrl: 'add-picture.html'
 })
 export class AddPicturePage {
-	base64Image: string = null;
+	base64Image: string = '';
 
 	constructor(
 		public navCtrl: NavController,
@@ -26,6 +26,10 @@ export class AddPicturePage {
 		public actionsProvider: ActionProvider,
 		public alertCtrl: AlertController
 	) {}
+
+	goToLogin(): void {
+		this.navCtrl.push('LoginPage');
+	}
 
 	takePicture(): void {
 		this.cameraPlugin
@@ -45,8 +49,8 @@ export class AddPicturePage {
 				},
 				(error) => {
 					let alert = this.alertCtrl.create({
-						title: 'Registro Exitoso!!!',
-						subTitle: 'Tu registro se hizo correctamente',
+						title: 'error al tomar la foto',
+						subTitle: 'ERROR!',
 						buttons: [ 'Aceptar' ]
 					});
 					alert.present();

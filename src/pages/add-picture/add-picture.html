@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>addPicture</ion-title>
+    <ion-title>Camera</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,12 @@
 
 <ion-content padding>
 
+    <span *ngIf="base64Image.length == 0">Picture no taken!...</span> 
+    <span *ngIf="base64Image">Picture taken!</span>    
+    <button ion-button icon-only (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    <button ion-button block (click)="takePicture()">Agregar Invitado</button>
+
+    <button ion-button block (click)="goToLogin()">Agregar Invitado</button>
 </ion-content>

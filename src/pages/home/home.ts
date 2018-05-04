@@ -13,7 +13,4 @@ export class HomePage {
 	tab3Root = 'PostsPage';
 
 	constructor(public navCtrl: NavController) {}
-	goToSecondPage(): void {
-		this.navCtrl.push('PostsPage');
-	}
 }
