@@ -1,3 +1,4 @@
+import { RegisterPage } from './../register/register';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -26,6 +27,10 @@ export class LoginPage {
 		public alertCtrl: AlertController
 	) {}
 
+	goToRegister() {
+		this.navCtrl.push('RegisterPage');
+	}
+
 	Login(email: string, password: string) {
 		this.actionsProvider.loginUser(email, password).then(
 			(authData) => {
@@ -33,8 +38,8 @@ export class LoginPage {
 			},
 			(error) => {
 				let alert = this.alertCtrl.create({
-					title: 'error al ingresar, por favor verifique sus datos',
-					subTitle: 'ERROR!',
+					title: 'Error al ingresar!!',
+					subTitle: 'Por favor verifique sus datos',
 					buttons: [ 'Aceptar' ]
 				});
 				alert.present();

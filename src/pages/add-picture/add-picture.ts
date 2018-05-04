@@ -27,10 +27,6 @@ export class AddPicturePage {
 		public alertCtrl: AlertController
 	) {}
 
-	goToLogin(): void {
-		this.navCtrl.push('LoginPage');
-	}
-
 	takePicture(): void {
 		this.cameraPlugin
 			.getPicture({
@@ -49,7 +45,7 @@ export class AddPicturePage {
 				},
 				(error) => {
 					let alert = this.alertCtrl.create({
-						title: 'error al tomar la foto',
+						title: 'Error al ingresa',
 						subTitle: 'ERROR!',
 						buttons: [ 'Aceptar' ]
 					});

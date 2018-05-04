@@ -27,4 +27,11 @@ export class ActionProvider {
 	loginUser(email: string, password: string) {
 		return this.afAth.auth.signInWithEmailAndPassword(email, password);
 	}
+
+	registerUser(email: string, password: string) {
+		return this.afAth.auth.createUserWithEmailAndPassword(email, password).then((user) => {
+			const id = this.db.createId();
+			this.db.collection('user').doc(id).set({ id, email, password });
+		});
+	}
 }

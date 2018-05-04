@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,22 +15,42 @@
 
 <ion-content padding>
 
-  <ion-content padding>
-      <ion-card>
+  <ion-content padding>      
           <img src="assets/imgs/log.jpg" />
-        </ion-card>
+        
 
-<h3>Bienvenido!</h3>
 
-<ion-item>
-    <ion-label fixed>Email</ion-label>
-    <ion-input type="text"[(ngModel)]="email" ></ion-input> 
-  </ion-item>
 
-  <ion-item>
-      <ion-label fixed>Password</ion-label>
-      <ion-input type="password"[(ngModel)]="password" ></ion-input> 
-    </ion-item>  
-   
-    <button ion-button block (click)="Login(email,password)">Entrar</button>
+<ion-card>
+
+  <ion-card-title>
+    Login
+  </ion-card-title>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="text"[(ngModel)]="email" ></ion-input> 
+    </ion-item>
+  
+    <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input type="password"[(ngModel)]="password" ></ion-input> 
+      </ion-item>  
+     
+      <button ion-button block (click)="Login(email,password)">Entrar</button>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-card>
+
+  <ion-card-title>
+    ¿You want to register?
+  </ion-card-title>
+
+  <ion-card-content>       
+      <button ion-button block (click)="goToRegister()">Clic here</button>
+  </ion-card-content>
+</ion-card>
 </ion-content>
