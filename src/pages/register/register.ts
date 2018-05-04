@@ -17,10 +17,8 @@ import { ActionProvider } from '../../providers/action/action';
 })
 export class RegisterPage {
 	email: string;
-	password: string;
+	password: string = '';
 	password2: string;
-
-	validationPassword: string = ' ';
 
 	constructor(
 		public navCtrl: NavController,
@@ -38,7 +36,7 @@ export class RegisterPage {
 				(error) => {
 					let alert = this.alertCtrl.create({
 						title: 'Error al ingresar!!',
-						subTitle: 'Por favor verifique sus datos',
+						subTitle: 'Por favor verifique su email',
 						buttons: [ 'Aceptar' ]
 					});
 					alert.present();

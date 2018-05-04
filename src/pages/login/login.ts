@@ -17,7 +17,7 @@ import { ActionProvider } from '../../providers/action/action';
 	templateUrl: 'login.html'
 })
 export class LoginPage {
-	email: string;
+	email: string = '';
 	password: string;
 
 	constructor(
@@ -32,18 +32,27 @@ export class LoginPage {
 	}
 
 	Login(email: string, password: string) {
-		this.actionsProvider.loginUser(email, password).then(
-			(authData) => {
-				this.navCtrl.setRoot(HomePage);
-			},
-			(error) => {
-				let alert = this.alertCtrl.create({
-					title: 'Error al ingresar!!',
-					subTitle: 'Por favor verifique sus datos',
-					buttons: [ 'Aceptar' ]
-				});
-				alert.present();
-			}
-		);
+		if (email == '') {
+			let alert = this.alertCtrl.create({
+				title: 'Error al ingresar!!',
+				subTitle: 'Por favor ingrese un correo',
+				buttons: [ 'Aceptar' ]
+			});
+			alert.present();
+		} else {
+			this.actionsProvider.loginUser(email, password).then(
+				(authData) => {
+					this.navCtrl.setRoot(HomePage);
+				},
+				(error) => {
+					let alert = this.alertCtrl.create({
+						title: 'Error al ingresar!!',
+						subTitle: 'Por favor verifique sus datos',
+						buttons: [ 'Aceptar' ]
+					});
+					alert.present();
+				}
+			);
+		}
 	}
 }

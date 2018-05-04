@@ -16,18 +16,10 @@
 <ion-content padding>
 
   <ion-content padding>      
-          <img src="assets/imgs/log.jpg" />
-        
+          <img src="assets/imgs/log.jpg" />    
 
-
-
-<ion-card>
-
-  <ion-card-title>
-    Login
-  </ion-card-title>
-
-  <ion-card-content>
+<br><br>
+ 
     <ion-item>
       <ion-label fixed>Email</ion-label>
       <ion-input type="text"[(ngModel)]="email" ></ion-input> 
@@ -37,11 +29,10 @@
         <ion-label fixed>Password</ion-label>
         <ion-input type="password"[(ngModel)]="password" ></ion-input> 
       </ion-item>  
-     
+      <br>
       <button ion-button block (click)="Login(email,password)">Entrar</button>
-  </ion-card-content>
-</ion-card>
 
+<br>
 
 <ion-card>
 

@@ -15,6 +15,19 @@
 
 <ion-content padding>
 
+    <img src="assets/imgs/desc.jpg" /> 
+
+      <ion-card>
+        <ion-card-content>
+            <img src="assets/imgs/perfil.jpg" *ngIf="base64Image.length == 0"/> 
+            
+                <img [src]="base64Image"/>
+            
+        </ion-card-content>
+    </ion-card>
+   
+  
+
     <span *ngIf="base64Image.length == 0">Picture no taken!...</span> 
     <span *ngIf="base64Image">Picture taken!</span>    
     <button ion-button icon-only (click)="takePicture()">

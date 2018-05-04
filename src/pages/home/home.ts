@@ -1,3 +1,4 @@
+import { LoginPage } from './../login/login';
 import { AddPicturePage } from './../add-picture/add-picture';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -9,8 +10,8 @@ import { RegisterPage } from './../register/register';
 	templateUrl: 'home.html'
 })
 export class HomePage {
-	tab2Root = 'AddPicturePage';
-	tab3Root = 'PostsPage';
+	tab1Root = 'AddPicturePage';
+	tab2Root = 'PostsPage';
 
 	constructor(public navCtrl: NavController) {}
 }

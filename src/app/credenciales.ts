@@ -3,6 +3,6 @@ export const environment = {
 	authDomain: 'finalionic-f116a.firebaseapp.com',
 	databaseURL: 'https://finalionic-f116a.firebaseio.com',
 	projectId: 'finalionic-f116a',
-	storageBucket: '',
+	storageBucket: 'finalionic-f116a.appspot.com',
 	messagingSenderId: '1084060316054'
 };

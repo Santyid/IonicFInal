@@ -18,6 +18,7 @@ import { ActionProvider } from '../../providers/action/action';
 })
 export class AddPicturePage {
 	base64Image: string = '';
+	image2: string = 'assets/imgs/perfil.jpg';
 
 	constructor(
 		public navCtrl: NavController,
