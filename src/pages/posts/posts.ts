@@ -26,6 +26,11 @@ export class PostsPage {
 		});
 	}
 
+	/**
+	 * Metodo que redirecciona a la pagina DetailPage y envia como parametro el post
+	 * seleccionado
+	 * @param post objeto post 
+	 */
 	goToSecondPage(post: posts): void {
 		this.navCtrl.push('DetailPostPage', { currentItem: post });
 	}

@@ -28,13 +28,16 @@ export class AddPicturePage {
 		public alertCtrl: AlertController
 	) {}
 
+	/**
+	 * Metodo take picture que toma la foto y la guarda en la galeria del disposito
+	 * Tambien guardar en una variable para mostrarla en la pagina principal
+	 */
 	takePicture(): void {
 		this.cameraPlugin
 			.getPicture({
-				quality: 95,
+				quality: 100,
 				destinationType: this.cameraPlugin.DestinationType.DATA_URL,
 				sourceType: this.cameraPlugin.PictureSourceType.CAMERA,
-				allowEdit: true,
 				encodingType: this.cameraPlugin.EncodingType.PNG,
 				targetWidth: 500,
 				targetHeight: 500,
@@ -42,7 +45,9 @@ export class AddPicturePage {
 			})
 			.then(
 				(imageData) => {
-					this.base64Image = imageData;
+					// imageData is either a base64 encoded string or a file URI
+					// If it's base64:
+					this.base64Image = 'data:image/jpeg;base64,' + imageData;
 				},
 				(error) => {
 					let alert = this.alertCtrl.create({

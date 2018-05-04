@@ -20,14 +20,28 @@ export class ActionProvider {
 		public afAth: AngularFireAuth
 	) {}
 
+	/**
+	 * Metodo el cual obtiene todos los post del Json
+	 */
 	getPosts() {
 		return this.http.get<posts[]>(this.urlPost);
 	}
 
+	/**
+	 * Metodo Login usuario el cual logea al usuario 
+	 * @param email email del usuario
+	 * @param password password del usuario
+	 */
 	loginUser(email: string, password: string) {
 		return this.afAth.auth.signInWithEmailAndPassword(email, password);
 	}
 
+	/**
+	 * Metodo para registrar un usuario el cual recibe los datos del usuario y los guarda 
+	 * en la base de datos
+	 * @param email email del usuario
+	 * @param password password del usuario
+	 */
 	registerUser(email: string, password: string) {
 		return this.afAth.auth.createUserWithEmailAndPassword(email, password).then((user) => {
 			const id = this.db.createId();

@@ -27,10 +27,18 @@ export class LoginPage {
 		public alertCtrl: AlertController
 	) {}
 
+	/**
+	 * Metodoo que redirecciona a la pagina RegisterPage
+	 */
 	goToRegister() {
 		this.navCtrl.push('RegisterPage');
 	}
 
+	/**
+	 * Metodo de Login el cual envia los datos al provider para su inicio y valida que si sean correctos
+	 * @param email email del usuario
+	 * @param password password del usuario
+	 */
 	Login(email: string, password: string) {
 		if (email == '') {
 			let alert = this.alertCtrl.create({

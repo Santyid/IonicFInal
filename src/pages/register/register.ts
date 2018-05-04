@@ -27,6 +27,13 @@ export class RegisterPage {
 		public alertCtrl: AlertController
 	) {}
 
+	/**
+	 * Metodo Register el cual registra a un usuario y valida que las contraseñas y 
+	 * el email sean correctos para llevar acabo el registro
+	 * @param email email del usuari
+	 * @param password password del usuario
+	 * @param password2 password2 del usuario
+	 */
 	Register(email: string, password: string, password2: string) {
 		if (password == password2) {
 			this.actionsProvider.registerUser(email, password).then(

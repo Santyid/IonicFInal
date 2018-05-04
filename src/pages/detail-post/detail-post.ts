@@ -15,7 +15,13 @@ import { posts } from '../../app/posts.interface';
 	templateUrl: 'detail-post.html'
 })
 export class DetailPostPage {
+	//Variable posts para cargar el detalle del post
 	posts: posts;
+	/**
+	 * Contructor que recibe los parametros enviados por la pagina PostPage
+	 * @param navCtrl Recibe los parametros de la ventana pasada
+	 * @param navParams 
+	 */
 	constructor(public navCtrl: NavController, public navParams: NavParams) {
 		this.posts = navParams.get('currentItem');
 	}
