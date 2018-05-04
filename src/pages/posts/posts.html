@@ -17,6 +17,8 @@
           <ion-thumbnail item-start>
               <img src="assets/imgs/post.jpg" />
             </ion-thumbnail>
-          <h5 (click)="goToSecondPage(post)">{{post.title}} </h5>
+          <h5 (click)="goToSecondPage(post)">{{post.title |  uppercase}} </h5>
         </ion-item>  
+
+      
 </ion-content>

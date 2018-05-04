@@ -1,13 +1,15 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+
 
 <ion-content padding>
  
-  <button ion-button block (click)="goToSecondPage()">Agregaro</button>
+  <button ion-button block (click)="goToSecondPage()">Agregar</button>
 
+
+
+  <ion-tabs>
+    
+    <ion-tab  tabTitle="Camera " [root]="tab2Root">  </ion-tab>
+    <ion-tab tabTitle="Post " [root]="tab3Root"> </ion-tab>
+  
+  </ion-tabs>
 </ion-content>
